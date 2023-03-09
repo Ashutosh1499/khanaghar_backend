@@ -6,7 +6,7 @@ mongoDB();
 dotenv.config();
 
 const BASE_URL = process.env.BASE_URL;
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', `${BASE_URL}`);
