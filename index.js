@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoDB = require('./db');
+const cors = require('cors');
 mongoDB();
 dotenv.config();
 
@@ -16,6 +17,8 @@ app.use((req, res, next) => {
 	);
 	next();
 });
+
+app.use(cors());
 
 app.get('/', (req, res) => {
 	res.send('Hi');
